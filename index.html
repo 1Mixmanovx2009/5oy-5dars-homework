@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5-dars</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>To Do List</h1>
+            <div class="filters">
+                <button class="filter-btn" data-filter="all">Barchasi</button>
+                <button class="filter-btn" data-filter="active">Faol</button>
+                <button class="filter-btn" data-filter="completed">Bajarilgan</button>
+            </div>
+        </header>
+
+        <main>
+            <div class="input-group">
+                <input type="text" id="new-task" placeholder="Yangi vazifa qo'shing">
+                <button id="add-task">Qo'shish</button>
+            </div>
+            <ul id="task-list"></ul>
+        </main>
+
+        <!-- Modal Oyna -->
+        <div id="edit-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Vazifani Tahrirlang</h2>
+                <input type="text" id="edit-task-input" placeholder="Vazifa matnini kiriting">
+                <input type="date" id="edit-task-date">
+                <button id="save-task">Saqlash</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>
