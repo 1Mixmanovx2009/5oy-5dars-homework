@@ -4,39 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>5-dars</title>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+        }
+    </style>
     <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
-    <div class="app-container">
-        <header>
-            <h1>To Do List</h1>
-            <div class="filters">
-                <button class="filter-btn" data-filter="all">Barchasi</button>
-                <button class="filter-btn" data-filter="active">Faol</button>
-                <button class="filter-btn" data-filter="completed">Bajarilgan</button>
-            </div>
-        </header>
-
-        <main>
-            <div class="input-group">
-                <input type="text" id="new-task" placeholder="Yangi vazifa qo'shing">
-                <button id="add-task">Qo'shish</button>
-            </div>
-            <ul id="task-list"></ul>
-        </main>
-
-        <!-- Modal Oyna -->
-        <div id="edit-modal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2>Vazifani Tahrirlang</h2>
-                <input type="text" id="edit-task-input" placeholder="Vazifa matnini kiriting">
-                <input type="date" id="edit-task-date">
-                <button id="save-task">Saqlash</button>
-            </div>
-        </div>
+    <form class="todo-form w-[500px] flex gap-3 item-end justify-between mx-auto mt-5 p-2 rounded-lg">
+        <label class="w-[78%] flex flex-col">
+            <span class="span-title w-[110px] text-slate-700 p-[2px] text-[15px] bg-slate-300">Enter your todo</span>
+            <input required class="todo-input p-[15px] outline-none focus-shadow-sm focus-blue-500" placeholder="Add your todo" type="text">
+        </label>
+        <label class="cursor-pointer">
+            <input class="hidden chusen-img" name="chuseImg" type="file">
+            <img class=" mt-9" src="./images/upload-svgrepo-com.svg" alt="" width="29px" height="29px">
+        </label>
+        <button class="add-btn p-[6px] w-[19%] h-[55px] rounded-lg mt-6 text-white border-[2px] border-transparent font-semibold" type="submit">Add</button>
+    </form>
+    <div class="w-[484px] mx-auto mt-5">
+        <img class="rounded-lg upload-img" src="./images/no-picture-available-icon-1.jpg" alt="" width="100" height="100">
+    </div>  
+    <div class="counts-wrapper flex justify-between item-center my-[20px] w-[484px] gap-4">
+        <button class="all-count-btn p-2 border-[2px] rounded-lg text-[15px] w-[30%]">All (<span class="all-count">0</span>)</button>
+        <button class="complated-count-btn p-2 border-[2px] rounded-lg text-[15px] w-[30%]">Complated(<span class="all-count">0</span>)</button>
+        <button class="uncomplated-count-btn p-2 border-[2px] rounded-lg text-[15px] w-[30%]">Uncomplated(<span class="all-count">0</span>)</button>
     </div>
+    <ul class="todo-list w-[484px] space-y-2 p-3 bg-white p-3 mx-auto rounded-lg"> 
 
+    </ul>
+    <div id="wrapper" class="modal-wrapper scale-0 duration-300 fixed top-0 bottom-0 left-0 right-0 backdrop-blur">
+        <div class="modal-inner absolute w-[400px] left-0 right-0 mx-auto mt-[100px] p-5 bg-slate-300 rounded-lg"></div>
+    </div>
     <script src="/js/main.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
 </body>
+</canvas>
 </html>

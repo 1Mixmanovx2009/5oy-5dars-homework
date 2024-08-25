@@ -1,23 +1,14 @@
-/* Umumiy uslublar */
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #e0f7fa, #80deea);
+    background: linear-gradient(135deg, #00796b, #80deea);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    /* background: #060e1b;
+    overflow: hidden; */
     margin: 0;
-}
-
-.app-container {
-    background: #ffffff;
-    border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    width: 100%;
-    max-width: 500px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
 }
 
 header {
@@ -25,25 +16,14 @@ header {
     margin-bottom: 20px;
 }
 
-h1 {
-    color: #333;
-    font-size: 2rem;
+.span-title {
+    font-size: 15px;
+    border-radius: 10px 10px 0 0 ;
+    transition: all 0.2s;
 }
 
-.filters {
-    margin-top: 10px;
-}
-
-.filter-btn {
-    background: #00796b;
-    color: #ffffff;
-    border: none;
-    border-radius: 20px;
-    padding: 8px 15px;
-    margin: 0 5px;
-    font-size: 14px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
+.span-title:hover {
+    box-shadow: 0px 0px 9px 2px gray, 0 14px 14px 0 gray;
 }
 
 .filter-btn:hover {
@@ -57,7 +37,7 @@ h1 {
     margin-bottom: 20px;
 }
 
-input[type="text"], input[type="date"] {
+/* input[type="text"], input[type="date"] {
     padding: 12px;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -70,9 +50,14 @@ input[type="text"]:focus, input[type="date"]:focus {
     border-color: #00796b;
     box-shadow: 0 0 0 3px rgba(38, 143, 255, 0.3);
     outline: none;
+} */
+
+.todo-input {
+    padding: 15px;
+    border-radius: 0 12px 12px 12px;
 }
 
-button {
+.add-btn, .all-count-btn,.complated-count-btn, .uncomplated-count-btn {
     padding: 12px 20px;
     background-color: #00796b;
     color: #ffffff;
@@ -83,10 +68,37 @@ button {
     transition: background-color 0.3s, transform 0.3s;
 }
 
-button:hover {
-    background-color: #004d40;
+.add-btn:hover {
+    background-color: #138493;
     transform: scale(1.05);
 }
+
+.all-count-btn:hover {
+    background-color: #138493;
+    transform: scale(1.05);
+}
+
+.complated-count-btn {
+    padding: 12px 20px;
+    background-color: #00796b;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.complated-count-btn:hover {
+    background-color: #138493;
+    transform: scale(1.05);
+}
+
+.uncomplated-count-btn:hover {
+    background-color: #138493;
+    transform: scale(1.05);
+}
+
 
 ul {
     list-style: none;
@@ -121,9 +133,9 @@ li:hover {
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
-input[type="checkbox"] {
+/* input[type="checkbox"] {
     margin-right: 10px;
-}
+} */
 
 .edit-btn, .remove-btn {
     border: none;
